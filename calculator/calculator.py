@@ -1,22 +1,27 @@
-q1 = int (input('Введи число 1: '))
-q2 = int (input('Введи число 2: '))
+first_number = int (input('Введи число 1: '))
+second_number = int (input('Введи число 2: '))
 
-v = int (input('Операція? \n 1 Додавання \n 2 Відмання \n 3 Ділення \n 4 Множення \n'))
+math_operation = int (input('Операція? \n 1 Додавання \n 2 Відмання \n 3 Ділення \n 4 Множення \n'))
 
-if v == 1:
-    r = q1 + q2
-    p = 'Додавання'
-    t = p
-if v == 2:
-    r = q1 - q2
-    l = 'Віднімання'
-    t = l
-if v == 3:
-    r = float(q1 / q2)
-    m = 'Ділення'
-    t = m
-if v == 4:
-    r = q1 * q2
-    n = 'Множення'
-    t = n
-print ('Результат ',t,' = ',r)
+def calculate(number1, number2, operator):
+    r = 0
+    if operator < 1 or operator > 4:
+        print('unknown operator')
+    if operator == 1:
+        r = number1 + number2
+        p = 'Додавання'
+        t = p
+    if operator == 2:
+        r = number1 - number2
+        l = 'Віднімання'
+        t = l
+    if operator == 3:
+        r = float(number1 / number2)
+        m = 'Ділення'
+        t = m
+    if operator == 4:
+        r = number1 * number2
+        n = 'Множення'
+        t = n
+    return r
+print ('Результат = ', calculate(first_number, second_number, math_operation))
